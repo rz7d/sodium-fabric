@@ -6,6 +6,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.AbstractTexture;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.texture.TextureManager;
+import net.minecraft.screen.PlayerScreenHandler;
 import org.lwjgl.opengl.GL11;
 
 public class ChunkProgramMultiTexture extends ChunkProgramTextureComponent {
@@ -43,7 +44,7 @@ public class ChunkProgramMultiTexture extends ChunkProgramTextureComponent {
         LightmapTextureManagerAccessor lightmapTextureManager =
                 ((LightmapTextureManagerAccessor) client.gameRenderer.getLightmapTextureManager());
 
-        AbstractTexture blockAtlasTex = textureManager.getTexture(SpriteAtlasTexture.BLOCK_ATLAS_TEX);
+        AbstractTexture blockAtlasTex = textureManager.getTexture(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE);
         AbstractTexture lightTex = lightmapTextureManager.getTexture();
 
         this.bindTexture(blockAtlasTex, ChunkProgramTextureUnit.BLOCK_ATLAS);
